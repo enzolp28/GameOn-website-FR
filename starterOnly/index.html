@@ -23,7 +23,7 @@
       <a href="#"><span>À propos</span></a>
       <a href="#"><span>Contact</span></a>
       <a href="#"><span>Évènements passés</span></a>
-      <a href="javascript:void(0);" class="icon" onclick="editNav()">
+      <a href="#" class="icon">
         <i class="fa fa-bars"></i>
       </a>
     </div>
@@ -56,16 +56,20 @@
         <div class="content">
           <span class="close"></span>
           <div class="modal-body">
-            <form name="reserve">
-              <div class="formData">
+            <form
+              name="reserve"
+              action="index.html"
+              method="get"
+            >
+              <div
+                class="formData">
                 <label for="first">Prénom</label><br>
                 <input
                   class="text-control"
                   type="text"
                   id="first"
-                  name="first"
+                  name="Prénom"
                   minlength="2"
-                  required
                 /><br>
               </div>
               <div
@@ -75,9 +79,7 @@
                   class="text-control"
                   type="text"
                   id="last"
-                  name="last"
-                  minlength="2"
-                  
+                  name="Nom"
                 /><br>
               </div>
               <div
@@ -88,7 +90,6 @@
                   type="email"
                   id="email"
                   name="email"
-                  
                 /><br>
               </div>
               <div
@@ -99,15 +100,14 @@
                   type="date"
                   id="birthdate"
                   name="birthdate"
-                  
                 /><br>
               </div>
               <div
                 class="formData">
                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" >
+                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
               </div>
-              <p class="text-label">À quel tournoi souhaitez-vous participer cette année ?</p>
+              <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
               <div
                 class="formData">
                 <input
@@ -199,11 +199,20 @@
                 <br>
               </div>
               <input
-                class="btn-submit button"
+                class="btn-submit"
                 type="submit"
+                class="button"
                 value="C'est parti"
               />
             </form>
+            <div class="content-conf">
+              <div class="confirmation">
+                <p></p>
+                <h2>Merci pour <br> votre inscription<h2>
+                <input class="btn-submit close-conf" type="submit" value="Fermer">
+              </div>
+            </div>
+            </div>
           </div>
         </div>
       </div>
@@ -213,6 +222,6 @@
         Copyright 2014 - 2022, GameOn Inc.
       </p>
     </footer>
-    <script src="./js/script.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
