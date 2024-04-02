@@ -145,6 +145,12 @@ function verifierAnniversaire(){
   let dateDeNaissance = new Date(dateDeNaissanceString)
   let diffDate = dateDuJour.getFullYear() - dateDeNaissance.getFullYear();
   
+  if (dateDeNaissanceString === "") {
+    afficherErreur(inputBirthdate, "Veuillez renseigner votre de date de naissance.")
+  }else{
+    supprimerErreur(inputBirthdate)
+  }
+  
   if (dateDuJour.getMonth() < dateDeNaissance.getMonth() || (dateDuJour.getMonth() === dateDeNaissance.getMonth() && dateDuJour.getDate() < dateDeNaissance.getDate())) {
     diffDate--;
   }
@@ -157,11 +163,6 @@ function verifierAnniversaire(){
     supprimerErreur(inputBirthdate)
   }
 
-  if (dateDeNaissanceString === "") {
-    afficherErreur(inputBirthdate, "Veuillez renseigner votre de date de naissance.")
-  }else{
-    supprimerErreur(inputBirthdate)
-  }
 }
 
 function verifierParticipation(){
