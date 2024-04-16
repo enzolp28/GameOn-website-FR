@@ -223,6 +223,8 @@ form.addEventListener("submit", e => {
   console.log('aaa');
 })
 
+// Verification de l'ensemble des fonctions
+// si aucun elements avec '[data-error-visible="true"]' est trouvé elle retourne true
 function validateInputs() {
   verifierParticipation();
   verifierAnniversaire();
