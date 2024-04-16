@@ -101,8 +101,10 @@ function verifierVilleChoisie() {
 
 function verifierCondition() {
   if (!inputCondition.checked) {
-    inputCondition.parentElement.setAttribute("data-error-visible", true)
-    inputCondition.parentElement.setAttribute("data-error", "Vous devez vérifier que vous acceptez les termes et conditions.")
+    afficherErreur(inputCondition, "Vous devez vérifier que vous acceptez les termes et conditions.")
+  }
+  if (inputCondition.checked) {
+    supprimerErreur(inputCondition)
   }
 }
 
@@ -175,11 +177,12 @@ function verifierParticipation(){
   }
 }
 
-inputPrenom.addEventListener('blur', verifierPrenom)
-inputNom.addEventListener('blur', verifierNom)
+inputPrenom.addEventListener('blur', verifierPrenom);
+inputNom.addEventListener('blur', verifierNom);
 inputEmail.addEventListener("blur", verifierEmail);
-inputBirthdate.addEventListener('change', verifierAnniversaire)
-inputParticipation.addEventListener("blur", verifierParticipation)
+inputBirthdate.addEventListener('change', verifierAnniversaire);
+inputParticipation.addEventListener("blur", verifierParticipation);
+inputCondition.addEventListener('change', verifierCondition)
 inputVille.forEach(ville => {
   ville.addEventListener('change', verifierVilleChoisie);
 });
@@ -207,6 +210,7 @@ function validateInputs() {
   verifierNom();
   verifierPrenom();
   verifierVilleChoisie();
+  verifierCondition();
 
   return !document.querySelector('[data-error-visible="true"]');
 }
